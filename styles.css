@@ -179,6 +179,28 @@ nav a.active {
   border-color: #2f5d8a;
 }
 
+.hero-button-secondary.hero-button-dark {
+  background: #2f3442;
+  border-color: #2f3442;
+  color: white;
+}
+
+.hero-button-secondary.hero-button-dark:hover {
+  background: #1f2230;
+  border-color: #1f2230;
+}
+
+.hero-button-secondary.hero-button-outline {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.75);
+  color: white;
+}
+
+.hero-button-secondary.hero-button-outline:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: white;
+}
+
 .button {
   display: inline-block;
   padding: 0.8rem 1.5rem;
