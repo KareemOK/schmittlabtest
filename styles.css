@@ -791,6 +791,7 @@ nav a.active {
 }
 
 .synaergy-header-logo {
+  height: 32px;
   border: 1.5px solid #d0d0d0;
   border-radius: 8px;
   padding: 0.4rem 0.8rem;
