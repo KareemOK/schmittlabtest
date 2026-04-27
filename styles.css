@@ -129,10 +129,12 @@ nav a.active {
 
 .hero-subtitle {
   font-size: 1.3rem;
-  max-width: 700px;
+  max-width: 800px;
   line-height: 1.5;
   margin-bottom: 2rem;
   opacity: 0.95;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-buttons {
@@ -193,14 +195,14 @@ nav a.active {
 }
 
 .hero-button-secondary.hero-button-outline {
-  background: #c8952a;
-  border-color: #c8952a;
-  color: white;
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #2f3442;
 }
 
 .hero-button-secondary.hero-button-outline:hover {
-  background: #b07d20;
-  border-color: #b07d20;
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(255, 255, 255, 0.85);
 }
 
 .button {
