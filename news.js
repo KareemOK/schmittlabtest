@@ -2,6 +2,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("news-list");
   if (!container) return;
 
+  const tag = container.dataset.tag || null;
+  const limit = tag ? Infinity : 2;
+
   fetch("news.json?v=1")
     .then(response => {
       if (!response.ok) {
@@ -10,26 +13,37 @@ document.addEventListener("DOMContentLoaded", () => {
       return response.json();
     })
     .then(items => {
-items
-  .sort((a, b) => new Date(b.date) - new Date(a.date))
-  .slice(0, 2)
-  .forEach((item, index) => {
-    const div = document.createElement("div");
-    div.className = "news-item";
+      let filtered = items
+        .sort((a, b) => new Date(b.date) - new Date(a.date));
 
-    if (index === 0) div.classList.add("news-item-featured");
-    if (index === 1) div.classList.add("news-item-secondary");
+      if (tag) {
+        filtered = filtered.filter(item => item.tags && item.tags.includes(tag));
+      }
 
-    div.innerHTML = `
-      ${item.image ? `<img src="${item.image}" class="news-image" alt="">` : ""}
-      <div class="news-date">${new Date(item.date).toLocaleDateString()}</div>
-      <div class="news-title">${item.title}</div>
-      <div class="news-text">${item.text}</div>
-      ${item.link ? `<a href="${item.link}" class="news-link">Read more →</a>` : ""}
-    `;
+      filtered = filtered.slice(0, limit);
 
-    container.appendChild(div);
-  });
+      if (filtered.length === 0) {
+        container.innerHTML = `<p class="news-empty">No updates yet — check back soon.</p>`;
+        return;
+      }
+
+      filtered.forEach((item, index) => {
+        const div = document.createElement("div");
+        div.className = "news-item";
+
+        if (index === 0) div.classList.add("news-item-featured");
+        if (index === 1) div.classList.add("news-item-secondary");
+
+        div.innerHTML = `
+          ${item.image ? `<img src="${item.image}" class="news-image" alt="">` : ""}
+          <div class="news-date">${new Date(item.date).toLocaleDateString()}</div>
+          <div class="news-title">${item.title}</div>
+          <div class="news-text">${item.text}</div>
+          ${item.link ? `<a href="${item.link}" class="news-link">Read more →</a>` : ""}
+        `;
+
+        container.appendChild(div);
+      });
     })
     .catch(error => {
       console.error(error);
