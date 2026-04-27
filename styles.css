@@ -777,6 +777,28 @@ nav a.active {
   text-justify: inter-word;
 }
 
+.epa-acknowledgement {
+  border-top: 1px solid #e0e0e0;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.epa-acknowledgement p {
+  margin: 0 0 0.6rem;
+}
+
+.epa-acknowledgement p:last-child {
+  margin-bottom: 0;
+}
+
+.epa-disclaimer {
+  font-style: italic;
+  opacity: 0.85;
+}
+
 .site-footer {
   background: #1E5631;
   color: white;
@@ -1094,7 +1116,6 @@ nav a.active {
     height: 22px;
   }
 }
-
 
 
 
