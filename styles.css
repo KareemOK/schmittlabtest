@@ -784,6 +784,18 @@ nav a.active {
   margin: 0.5rem 0;
 }
 
+.aim-header-logo {
+  background: #2f3442;
+  border-radius: 8px;
+  padding: 0.4rem 0.8rem;
+}
+
+.synaergy-header-logo {
+  border: 1.5px solid #d0d0d0;
+  border-radius: 8px;
+  padding: 0.4rem 0.8rem;
+}
+
 .epa-acknowledgement {
   border-top: 1px solid #e0e0e0;
   padding-top: 1.5rem;
