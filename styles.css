@@ -191,13 +191,13 @@ nav a.active {
 }
 
 .hero-button-secondary.hero-button-outline {
-  background: transparent;
+  background: rgba(47, 52, 66, 0.6);
   border-color: rgba(255, 255, 255, 0.75);
   color: white;
 }
 
 .hero-button-secondary.hero-button-outline:hover {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(47, 52, 66, 0.85);
   border-color: white;
 }
 
