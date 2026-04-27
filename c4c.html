@@ -24,6 +24,8 @@
   <meta property="og:image:alt"
         content="Schmitt Group research on catalytic water splitting and direct air capture at Trinity College Dublin" />
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap"
         rel="stylesheet">
   <link href="styles.css" rel="stylesheet" />
@@ -254,7 +256,7 @@
   </div>
 
   <div class="footer-bottom">
-    © 2025 Schmitt Group
+    © <span id="footer-year"></span> Schmitt Group
   </div>
 </footer>
 
@@ -284,6 +286,10 @@
     });
   </script>
   <script src="news.js"></script>
+
+  <script>
+    document.getElementById("footer-year").textContent = new Date().getFullYear();
+  </script>
 
 </body>
 </html>
