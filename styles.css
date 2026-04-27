@@ -804,6 +804,8 @@ nav a.active {
 .epa-disclaimer {
   font-style: italic;
   opacity: 0.85;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .site-footer {
