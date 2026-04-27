@@ -652,55 +652,6 @@ nav a.active {
   margin-bottom: 1rem;
 }
 
-.dac-companies {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 220px);
-  gap: 1.5rem;
-  justify-content: center;
-  margin: 2rem 0;
-}
-
-.dac-company-card {
-  height: 32px;
-  padding: 0.4rem;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.dac-company-card:hover {
-  transform: translateY(-2px);
-  box-shadow: none;
-}
-
-.dac-company-logo {
-  max-height: 36px;
-  max-width: 75%;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-}
-
-.dac-airinmotion {
-  background: #2f3442;
-}
-
-.dac-airinmotion .dac-company-logo {
-  filter: brightness(1.05);
-}
-
-.dac-synaergy {
-  background: #ffffff;
-  border: 1.5px solid #d0d0d0;
-}
-
-.dac-synaergy .dac-company-logo {
-  max-height: 30px;
-}
-
 .members-grid.members-grid-compact {
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 1.2rem;
