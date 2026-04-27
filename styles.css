@@ -150,6 +150,8 @@ nav a.active {
   text-decoration: none;
   font-weight: 700;
   font-size: 1.15rem;
+  min-width: 160px;
+  text-align: center;
   transition: background 0.2s ease, transform 0.2s ease;
 }
 
@@ -191,14 +193,14 @@ nav a.active {
 }
 
 .hero-button-secondary.hero-button-outline {
-  background: rgba(47, 52, 66, 0.6);
-  border-color: rgba(255, 255, 255, 0.75);
+  background: #c8952a;
+  border-color: #c8952a;
   color: white;
 }
 
 .hero-button-secondary.hero-button-outline:hover {
-  background: rgba(47, 52, 66, 0.85);
-  border-color: white;
+  background: #b07d20;
+  border-color: #b07d20;
 }
 
 .button {
