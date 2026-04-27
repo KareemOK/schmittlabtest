@@ -678,6 +678,11 @@ nav a.active {
   margin-bottom: 1rem;
 }
 
+.members-grid-two-col {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
 .members-grid.members-grid-compact {
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 1.2rem;
@@ -1094,6 +1099,10 @@ nav a.active {
 }
 
 @media (max-width: 600px) {
+  .members-grid-two-col {
+    grid-template-columns: 1fr;
+  }
+
   .hero {
     position: relative;
     height: auto;
