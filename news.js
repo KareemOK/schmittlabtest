@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!container) return;
 
   const tag = container.dataset.tag || null;
-  const limit = tag ? Infinity : 2;
+  const limit = tag ? Infinity : 3;
 
   fetch("news.json?v=1")
     .then(response => {
@@ -30,9 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
       filtered.forEach((item, index) => {
         const div = document.createElement("div");
         div.className = "news-item";
-
-        if (index === 0) div.classList.add("news-item-featured");
-        if (index === 1) div.classList.add("news-item-secondary");
 
         div.innerHTML = `
           ${item.image ? `<img src="${item.image}" class="news-image" alt="">` : ""}
