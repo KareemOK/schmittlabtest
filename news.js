@@ -31,6 +31,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const div = document.createElement("div");
         div.className = "news-item";
 
+        if (index === 0) div.classList.add("news-item-featured");
+        else div.classList.add("news-item-stacked");
+
         div.innerHTML = `
           ${item.image ? `<img src="${item.image}" class="news-image" alt="">` : ""}
           <div class="news-date">${new Date(item.date).toLocaleDateString()}</div>
