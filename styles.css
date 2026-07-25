@@ -293,7 +293,7 @@ nav a.active {
 .news-item-featured {
   background: #f2f7f2;
   border-left: 5px solid #1E5631;
-  border-radius: 0 10px 10px 0;
+  border-radius: 10px;
 }
 
 .news-item-featured .news-title {
@@ -325,8 +325,6 @@ nav a.active {
     height: 300px;
     flex: 1 1 auto;         /* grow to fill the tall card */
     min-height: 300px;
-    border-radius: 18px;    /* larger radius so the curve reads on the big featured image */
-    background: #f2f7f2;    /* match the featured card so letterbox blends in and corners read as round */
   }
 
   /* Stacked cards are shorter, so smaller images */
