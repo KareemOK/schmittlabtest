@@ -230,8 +230,10 @@ nav a.active {
 
 .news-list {
   margin-top: 1.5rem;
-  column-count: 1;
-  column-gap: 1.2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.2rem;
+  align-items: stretch;   /* all cards in a row share the same height */
 }
 
 .news-item {
@@ -240,10 +242,8 @@ nav a.active {
   border-radius: 10px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  /* Masonry: keep each card whole, don't split across columns */
-  break-inside: avoid;
-  -webkit-column-break-inside: avoid;
-  margin-bottom: 1.2rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .news-item:hover {
@@ -266,9 +266,9 @@ nav a.active {
 .news-item img.news-image {
   display: block;
   width: 100%;
-  height: auto;              /* landscape images keep full aspect ratio, never cropped */
-  max-height: 420px;         /* cap very tall/portrait images so one card can't dominate */
-  object-fit: contain;       /* show the whole image inside the box */
+  height: 220px;             /* fixed image area so all cards align */
+  object-fit: contain;       /* show the whole image, never cropped (letterboxed) */
+  background: #ececec;       /* fills the letterbox space around the image */
   border-radius: 8px;
   margin-bottom: 0.8rem;
 }
@@ -290,16 +290,16 @@ nav a.active {
   text-decoration: underline;
 }
 
-/* Masonry columns: 2 up on tablets, 3 on wider screens */
+/* Equal-height grid: 2 up on tablets, 3 on wider screens */
 @media (min-width: 700px) {
   .news-list {
-    column-count: 2;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (min-width: 1000px) {
   .news-list {
-    column-count: 3;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -1043,9 +1043,9 @@ nav a.active {
     gap: 2.5rem;
   }
 
-  /* News masonry — keep 2 columns on smaller tablets */
+  /* News grid — keep 2 columns on smaller tablets */
   .news-list {
-    column-count: 2;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   /* Section padding */
