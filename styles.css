@@ -325,7 +325,8 @@ nav a.active {
     height: 300px;
     flex: 1 1 auto;         /* grow to fill the tall card */
     min-height: 300px;
-    border-radius: 10px;    /* match the rounded corners of the other cards */
+    border-radius: 18px;    /* larger radius so the curve reads on the big featured image */
+    background: #f2f7f2;    /* match the featured card so letterbox blends in and corners read as round */
   }
 
   /* Stacked cards are shorter, so smaller images */
