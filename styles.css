@@ -229,10 +229,9 @@ nav a.active {
 }
 
 .news-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
   margin-top: 1.5rem;
+  column-count: 1;
+  column-gap: 1.2rem;
 }
 
 .news-item {
@@ -241,6 +240,10 @@ nav a.active {
   border-radius: 10px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  /* Masonry: keep each card whole, don't split across columns */
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  margin-bottom: 1.2rem;
 }
 
 .news-item:hover {
@@ -261,9 +264,11 @@ nav a.active {
 }
 
 .news-item img.news-image {
+  display: block;
   width: 100%;
-  max-height: 180px;
-  object-fit: cover;
+  height: auto;              /* landscape images keep full aspect ratio, never cropped */
+  max-height: 420px;         /* cap very tall/portrait images so one card can't dominate */
+  object-fit: contain;       /* show the whole image inside the box */
   border-radius: 8px;
   margin-bottom: 0.8rem;
 }
@@ -285,65 +290,16 @@ nav a.active {
   text-decoration: underline;
 }
 
-.news-item-compact {
-  padding: 0.9rem 1.1rem;
-  background: #fafafa;
-}
-
-.news-item-compact .news-image {
-  max-height: 120px;
-}
-
-.news-item-compact .news-title {
-  font-size: 0.95rem;
-}
-
-.news-item-compact .news-text {
-  font-size: 0.9rem;
-  color: #444;
-}
-
-.news-item-featured {
-  padding: 1.6rem 1.8rem;
-  background: #f2f7f2;
-  border-left: 5px solid #1E5631;
-}
-
-.news-item-featured .news-title {
-  font-size: 1.25rem;
-}
-
-.news-item-featured .news-text {
-  font-size: 1.05rem;
-}
-
-.news-item-featured .news-image {
-  max-height: 220px;
-}
-
-.news-item-secondary {
-  padding: 1rem 1.2rem;
-  background: #fafafa;
-}
-
-.news-item-secondary .news-title {
-  font-size: 0.95rem;
-}
-
-.news-item-secondary .news-text {
-  font-size: 0.9rem;
-  color: #444;
-}
-
-.news-item-secondary .news-image {
-  max-height: 120px;
-}
-
+/* Masonry columns: 2 up on tablets, 3 on wider screens */
 @media (min-width: 700px) {
   .news-list {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 1.5rem;
+    column-count: 2;
+  }
+}
+
+@media (min-width: 1000px) {
+  .news-list {
+    column-count: 3;
   }
 }
 
@@ -1087,9 +1043,9 @@ nav a.active {
     gap: 2.5rem;
   }
 
-  /* News grid — keep 2-col but adjust ratio */
+  /* News masonry — keep 2 columns on smaller tablets */
   .news-list {
-    grid-template-columns: 3fr 2fr;
+    column-count: 2;
   }
 
   /* Section padding */
