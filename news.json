@@ -41,5 +41,12 @@
      "text": "This week, Claire presented her work on supramolecular cages for HER at the 10th EuChemS Chemistry Congress (ECC10) in Antwerp.",
      "image": "assets/news/claireconf2.jpg",
      "tags": ["water-splitting", "H2 evolution", "MOF"]
+  },
+    {
+     "date": "2026-08-04",
+     "title": "New paper published in <i>Science and Technology of Advanced Materials</i>!",
+     "text": "Check out our latest publication on Ce(III)-MOFs as oxygen evolution catalysts.",
+     "image": "assets/news/ce-iii.png",
+     "tags": ["water-splitting", "H2 evolution", "MOF"]
   }
 ]
