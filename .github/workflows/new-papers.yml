@@ -48,9 +48,10 @@ jobs:
             echo "A suggestion branch for today already exists ($branch); not making another."
             exit 0
           fi
-          # don't re-suggest papers that are already waiting in an open suggestion
-          if gh pr list --state open --search "New papers to add in:title" --json number --jq '.[].number' | grep -q .; then
-            echo "There's already an open 'New papers to add' pull request; review that one first."
+          # don't re-suggest papers that are already waiting in an open suggestion (pull request or issue)
+          if gh pr list --state open --search "New papers to add in:title" --json number --jq '.[].number' | grep -q . \
+             || gh issue list --state open --search "New papers to add in:title" --json number --jq '.[].number' | grep -q .; then
+            echo "There's already an open 'New papers to add' suggestion; deal with that one first."
             exit 0
           fi
           git config user.name "github-actions[bot]"
