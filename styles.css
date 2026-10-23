@@ -262,12 +262,13 @@ nav a.active {
   line-height: 1.5;
 }
 
-/* Image box: the whole image is shown, and a blurred copy of it fills
-   any leftover space, so any image shape works in any box size */
+/* Image box: every news image box is 4:3, so a 4:3 upload (e.g. 1200x900)
+   fits exactly. Other shapes are shown whole, with a blurred copy of the
+   image filling any leftover space */
 .news-image-wrap {
   position: relative;
   overflow: hidden;
-  height: 180px;             /* default image height (mobile / stacked) */
+  aspect-ratio: 4 / 3;
   flex-shrink: 0;
   background: #ececec;
   border-radius: 8px;
@@ -332,7 +333,6 @@ nav a.active {
 @media (min-width: 760px) {
   .news-list {
     grid-template-columns: 1.4fr 1fr;
-    grid-auto-rows: 1fr;
   }
 
   .news-item-featured {
@@ -342,18 +342,28 @@ nav a.active {
 
   .news-item-stacked {
     grid-column: 2;
+    flex-direction: row;    /* small 4:3 picture beside the text */
+    gap: 0.9rem;
+    padding: 1rem;
   }
 
-  /* Featured image gets the extra vertical room */
-  .news-item-featured .news-image-wrap {
-    height: 300px;
-    flex: 1 1 auto;         /* grow to fill the tall card */
-    min-height: 300px;
-  }
-
-  /* Stacked cards are shorter, so smaller images */
   .news-item-stacked .news-image-wrap {
-    height: 160px;
+    width: 42%;
+    align-self: flex-start;  /* keep 4:3 rather than stretching to the card height */
+    margin-bottom: 0;
+  }
+
+  .news-item-stacked .news-body {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .news-item-stacked .news-title {
+    font-size: 0.95rem;
+  }
+
+  .news-item-stacked .news-text {
+    font-size: 0.88rem;
   }
 }
 
