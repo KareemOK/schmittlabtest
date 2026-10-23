@@ -34,8 +34,14 @@ document.addEventListener("DOMContentLoaded", () => {
         if (index === 0) div.classList.add("news-item-featured");
         else div.classList.add("news-item-stacked");
 
+        // Optional per-item image controls in news.json:
+        //   "focus": which part stays visible when cropped, e.g. "top", "center 30%", "left"
+        //   "fit": "contain" to show the whole image instead of filling the box
+        const imageClass = item.fit === "contain" ? "news-image news-image-contain" : "news-image";
+        const imageStyle = item.focus ? ` style="object-position: ${item.focus}"` : "";
+
         div.innerHTML = `
-          ${item.image ? `<img src="${item.image}" class="news-image" alt="">` : ""}
+          ${item.image ? `<img src="${item.image}" class="${imageClass}"${imageStyle} alt="">` : ""}
           <div class="news-date">${new Date(item.date).toLocaleDateString()}</div>
           <div class="news-title">${item.title}</div>
           <div class="news-text">${item.text}</div>

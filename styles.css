@@ -266,10 +266,16 @@ nav a.active {
   display: block;
   width: 100%;
   height: 180px;             /* default image height (mobile / stacked) */
-  object-fit: contain;
+  object-fit: cover;         /* fill the box, cropping the overflow */
+  object-position: center;   /* override per item with "focus" in news.json */
   background: #ececec;
   border-radius: 8px;
   margin-bottom: 0.8rem;
+}
+
+/* "fit": "contain" in news.json shows the whole image (e.g. logos, paper graphics) */
+.news-item img.news-image.news-image-contain {
+  object-fit: contain;
 }
 
 .news-title {
