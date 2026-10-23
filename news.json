@@ -48,5 +48,12 @@
      "text": "Check out our latest publication on Ce(III)-MOFs as oxygen evolution catalysts.",
      "image": "assets/news/ce-iii.png",
      "tags": ["water-splitting", "H2 evolution", "MOF"]
+  },
+    {
+     "date": "2026-10-21",
+     "title": "Global Bioeconomy Summit Poster",
+     "text": "This week, Rebeka and Kareem presented their poster on the C4C-capture project at the Global Bioeconomy Summit 2026!",
+     "image": "assets/news/gbs-poster.png",
+     "tags": ["dac", "direct air capture", "c4c"]
   }
 ]
