@@ -51,8 +51,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }).filter(Boolean);
   }
 
-  // drop leftover BibTeX braces and backslashes, e.g. "{MOF}" or "\Fe"
-  const cleanTitle = (title = "") => title.replace(/[{}\\]/g, "").trim();
+  // drop stray backslashes left over from BibTeX (braces are kept: they're chemistry, e.g. {Mn6})
+  const cleanTitle = (title = "") => title.replace(/\\/g, "").trim();
 
   // Titles may contain chemistry formatting such as Fe<sub>2</sub> or Fe<sup>III</sup>.
   // Escape everything, then re-allow only these plain tags (no attributes).
@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (pub.journal) details.push(`<em>${escapeHtml(pub.journal)}</em>`);
     if (pub.year) details.push(`<strong>${escapeHtml(pub.year)}</strong>`);
     if (pub.volume) details.push(escapeHtml(pub.volume));
-    if (pub.pages) details.push(escapeHtml(pub.pages));
+    if (pub.pages) details.push(escapeHtml(pub.pages).replace(/(\d)\s*-+\s*(\d)/, "$1–$2"));  // en dash in page ranges
 
     const doiButton = doi
       ? `<a class="pub-doi" href="https://doi.org/${escapeHtml(doi)}" target="_blank" rel="noopener noreferrer"
