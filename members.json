@@ -30,7 +30,7 @@
     }
   },
   {
-    "name": "Gearóid Manning",
+    "name": "Dr. Gearóid Manning",
     "role": "Postdoctoral Researcher",
     "group": "postdoc",
     "email": "gemannin@tcd.ie",
@@ -106,6 +106,7 @@
     "photo": "assets/rj6.jpeg",
     "email": "jurickor@tcd.ie",
     "orcid": "https://orcid.org/0009-0003-9765-443X",
+    "linkedin": "https://www.linkedin.com/in/rebeka-jur%C3%AD%C4%8Dkov%C3%A1-35216b426/",
     "projects": {
       "c4c": "PhD Researcher"
     }
