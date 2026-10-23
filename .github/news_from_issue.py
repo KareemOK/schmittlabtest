@@ -70,12 +70,22 @@ def clean(s):
 title, text = clean(title), clean(text)
 
 # ---- download and resize the photo ----
-headers = {"User-Agent": "schmittlab-website"}
-if os.environ.get("GITHUB_TOKEN"):
-    headers["Authorization"] = "Bearer " + os.environ["GITHUB_TOKEN"]
+def download(url):
+    # Uploaded images redirect to a storage server that rejects GitHub tokens, and public repos
+    # don't need one: try without first, then with the token (private repos).
+    attempts = [{"User-Agent": "schmittlab-website"}]
+    if os.environ.get("GITHUB_TOKEN"):
+        attempts.append({"User-Agent": "schmittlab-website", "Authorization": "Bearer " + os.environ["GITHUB_TOKEN"]})
+    for i, headers in enumerate(attempts):
+        try:
+            return urllib.request.urlopen(urllib.request.Request(url, headers=headers), timeout=60).read()
+        except Exception:
+            if i == len(attempts) - 1:
+                raise
+
+
 try:
-    data = urllib.request.urlopen(urllib.request.Request(urls[0], headers=headers), timeout=60).read()
-    img = ImageOps.exif_transpose(Image.open(io.BytesIO(data)))
+    img = ImageOps.exif_transpose(Image.open(io.BytesIO(download(urls[0]))))
 except Exception as e:
     fail(f"- I couldn't open the photo ({type(e).__name__}). Please use a JPG or PNG (iPhone HEIC photos need exporting as JPG).")
 if img.mode in ("RGBA", "LA", "P"):
