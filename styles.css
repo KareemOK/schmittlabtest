@@ -329,28 +329,50 @@ nav a.active {
   font-size: 1.05rem;
 }
 
-/* Featured left, two stacked on the right */
+/* Featured across the top, older items two per row beneath;
+   every card has its 4:3 picture to the left of the text */
 @media (min-width: 760px) {
   .news-list {
-    grid-template-columns: 1.4fr 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .news-item-featured,
+  .news-item-stacked {
+    flex-direction: row;
   }
 
   .news-item-featured {
-    grid-column: 1;
-    grid-row: 1 / span 2;   /* spans the height of both stacked cards */
+    grid-column: 1 / -1;    /* full width */
+    align-items: center;
+    gap: 1.6rem;
+  }
+
+  .news-item-featured .news-title {
+    font-size: 1.45rem;
   }
 
   .news-item-stacked {
-    grid-column: 2;
-    flex-direction: row;    /* small 4:3 picture beside the text */
     gap: 0.9rem;
     padding: 1rem;
   }
 
+  .news-item-featured .news-image-wrap,
   .news-item-stacked .news-image-wrap {
-    width: 42%;
     align-self: flex-start;  /* keep 4:3 rather than stretching to the card height */
     margin-bottom: 0;
+  }
+
+  .news-item-featured .news-image-wrap {
+    width: 52%;
+  }
+
+  .news-item-stacked .news-image-wrap {
+    width: 45%;
+  }
+
+  .news-item-featured .news-body {
+    flex: 1;
+    min-width: 0;
   }
 
   .news-item-stacked .news-body {
