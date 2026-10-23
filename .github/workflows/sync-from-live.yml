@@ -1,0 +1,35 @@
+# Test repo only: copy news, members and publications from the live site (KareemOK/schmittlab),
+# so the test site shows the real content. Run it from the Actions tab: "Sync content from live site"
+# -> "Run workflow". It never changes HTML, CSS or JavaScript.
+name: Sync content from live site
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Copy content from the live site
+        run: python .github/sync_from_live.py
+
+      - name: Commit if anything changed
+        run: |
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Already in sync with the live site"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Sync news, members and publications from the live site"
+          git push
