@@ -34,14 +34,20 @@ document.addEventListener("DOMContentLoaded", () => {
         if (index === 0) div.classList.add("news-item-featured");
         else div.classList.add("news-item-stacked");
 
+        // The whole image is shown by default, over a blurred copy of itself.
         // Optional per-item image controls in news.json:
+        //   "fit": "cover" to crop the image so it fills the box instead
         //   "focus": which part stays visible when cropped, e.g. "top", "center 30%", "left"
-        //   "fit": "contain" to show the whole image instead of filling the box
-        const imageClass = item.fit === "contain" ? "news-image news-image-contain" : "news-image";
+        const wrapClass = item.fit === "cover" ? "news-image-wrap news-image-cover" : "news-image-wrap";
         const imageStyle = item.focus ? ` style="object-position: ${item.focus}"` : "";
+        const imageHtml = item.image
+          ? `<div class="${wrapClass}" style="--news-image: url('${item.image}')">
+               <img src="${item.image}" class="news-image"${imageStyle} alt="">
+             </div>`
+          : "";
 
         div.innerHTML = `
-          ${item.image ? `<img src="${item.image}" class="${imageClass}"${imageStyle} alt="">` : ""}
+          ${imageHtml}
           <div class="news-date">${new Date(item.date).toLocaleDateString()}</div>
           <div class="news-title">${item.title}</div>
           <div class="news-text">${item.text}</div>
