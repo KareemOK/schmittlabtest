@@ -4,9 +4,7 @@
     "title": "Congrats Gearóid!",
     "text": "Massive congratulations to soon-to-be Dr. Gearóid Manning, who completed his PhD viva on Friday!",
     "image": "assets/news/gearoid-v.jpg",
-    "tags": [
-      "general"
-    ]
+    "tags": ["general"]
   },
   {
     "date": "2025-09-01",
@@ -14,71 +12,42 @@
     "text": "The EPA-funded C4C-Capture project has begun, focusing on biomass- and biowaste-derived carbon materials for DAC.",
     "image": "assets/epa.svg",
     "link": "c4c.html",
-    "tags": [
-      "c4c"
-    ]
+    "tags": ["c4c"]
   },
   {
     "date": "2026-07-23",
     "title": "Senan's poster presentation",
     "text": "Today, Senan presented his poster on advanced atmospheric carbon capture at the Energy Science Seminar!",
     "image": "assets/news/senanposter.jpeg",
-    "tags": [
-      "general",
-      "c4c"
-    ]
+    "tags": ["general", "c4c"]
   },
   {
-    "date": "2026-07-24",
-    "title": "Athira gives a talk at ECC10",
-    "text": "Well done to Athira, who gave a talk on supramolecular cages for HER at the 10th EuChemS Chemistry Congress (ECC10) in Antwerp.",
-    "image": "assets/news/athiraconf2.jpg",
-    "tags": [
-      "general",
-      "hydrogen"
-    ]
+     "date": "2026-07-24",
+     "title": "Athira gives a talk at ECC10",
+     "text": "Well done to Athira, who gave a talk on supramolecular cages for HER at the 10th EuChemS Chemistry Congress (ECC10) in Antwerp.",
+     "image": "assets/news/athiraconf2.jpg",
+     "tags": ["general", "hydrogen"]
   },
   {
-    "date": "2026-07-14",
-    "title": "Claire's conference poster",
-    "text": "This week, Claire presented her work on supramolecular cages for HER at the 10th EuChemS Chemistry Congress (ECC10) in Antwerp.",
-    "image": "assets/news/claireconf2.jpg",
-    "tags": [
-      "general",
-      "hydrogen"
-    ]
+     "date": "2026-07-14",
+     "title": "Claire's conference poster",
+     "text": "This week, Claire presented her work on supramolecular cages for HER at the 10th EuChemS Chemistry Congress (ECC10) in Antwerp.",
+     "image": "assets/news/claireconf2.jpg",
+     "tags": ["general", "hydrogen"]
+  },
+    {
+     "date": "2026-08-04",
+     "title": "New paper published in <i>Science and Technology of Advanced Materials</i>!",
+     "text": "Check out our latest publication on Ce(III)-MOFs as oxygen evolution catalysts.",
+     "image": "assets/news/ce-iii.webp",
+     "link": "https://www.tandfonline.com/doi/full/10.1080/14686996.2026.2694962",
+     "tags": ["water-splitting", "H2 evolution", "MOF"]
   },
   {
-    "date": "2026-08-04",
-    "title": "New paper published in <i>Science and Technology of Advanced Materials</i>!",
-    "text": "Check out our latest publication on Ce(III)-MOFs as oxygen evolution catalysts.",
-    "image": "assets/news/ce-iii.webp",
-    "link": "https://www.tandfonline.com/doi/full/10.1080/14686996.2026.2694962",
-    "tags": [
-      "water-splitting",
-      "H2 evolution",
-      "MOF"
-    ]
-  },
-  {
-    "date": "2026-10-21",
-    "title": "Global Bioeconomy Summit Poster",
-    "text": "This week, Rebeka and Kareem presented their poster on the C4C-capture project at the Global Bioeconomy Summit 2026!",
-    "image": "assets/news/gbs-poster.jpg",
-    "tags": [
-      "dac",
-      "direct air capture",
-      "c4c"
-    ]
-  },
-  {
-    "date": "2026-10-26",
-    "title": "TEST TEST TEST TEST TEST TEST",
-    "text": "TEST TEST TEST TEST TEST TESTTEST TEST TEST TEST TEST TESTTEST TEST TEST TEST TEST TESTTEST TEST TEST TEST TEST TESTTEST TEST TEST TEST TEST TESTTEST TEST TEST TEST TEST TESTTEST TEST TEST TEST TEST TEST",
-    "image": "assets/news/2026-10-26-test-test-test-test-test-test.jpg",
-    "tags": [
-      "general"
-    ],
-    "issue": 6
+     "date": "2026-10-21",
+     "title": "Global Bioeconomy Summit Poster",
+     "text": "This week, Rebeka and Kareem presented their poster on the C4C-capture project at the Global Bioeconomy Summit 2026!",
+     "image": "assets/news/gbs-poster.jpg",
+     "tags": ["dac", "direct air capture", "c4c"]
   }
 ]
